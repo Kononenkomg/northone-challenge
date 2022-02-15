@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+  northone:
+    container_name: todo_api
+    build: .
+    environment:
+      - ENVIRONMENT=prod
+    ports:
+      - '4000:4000'
+    depends_on:
+      - mongo

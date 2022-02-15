@@ -1,8 +1,8 @@
-import { config } from "../deps.ts";
+import { conf } from "../config/config.ts";
 
 const dbCreds = {
-  uri: config().DB_URI,
-  database: config().DB_DATABASE,
+  uri: conf.DB_URI,
+  database: conf.DB_DATABASE,
 };
 
 export { dbCreds };

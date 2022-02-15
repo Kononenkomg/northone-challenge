@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5ff8b6d0-22e7-4761-ae58-0579463cef2e",
+		"_postman_id": "dcf629ae-d5af-42a1-87e4-38c41228b2e1",
 		"name": "todo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -61,7 +61,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Cucumber\",\n    \"description\": \"Must be green\",\n    \"userId\": \"b6d8a49d-bf61-4eca-9c67-07768b23b6bd\",\n    \"status\": \"Pending\"\n}",
+					"raw": "{\n    \"title\": \"Tomato\",\n    \"description\": \"Must be red\",\n    \"userId\": \"a327813d-cb0b-400b-b92c-9a0b950d4875\",\n    \"status\": \"Pending\",\n    \"category\": \"shopping\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -90,7 +90,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Oil change\",\n    \"description\": \"Buy oil and make appointment\",\n    \"userId\": \"a7bd5765-bf4b-4940-b45d-9f50d6821158\",\n    \"due\": \"2022-03-01\",\n    \"category\": \"car\",\n}",
+					"raw": "{\n    \"title\": \"Oil change\",\n    \"description\": \"Buy oil and make appointment\",\n    \"userId\": \"a327813d-cb0b-400b-b92c-9a0b950d4875\",\n    \"due\": \"2022-03-01\",\n    \"category\": \"car\",\n    \"status\": \"Pending\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -147,7 +147,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/task?id=f6cfdb00-5a87-44e4-91d8-ff694aabdea2",
+					"raw": "http://localhost:4000/api/task?id=a327813d-cb0b-400b-b92c-9a0b950d4875&status=Done&category=shopping",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -160,7 +160,15 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "f6cfdb00-5a87-44e4-91d8-ff694aabdea2"
+							"value": "a327813d-cb0b-400b-b92c-9a0b950d4875"
+						},
+						{
+							"key": "status",
+							"value": "Done"
+						},
+						{
+							"key": "category",
+							"value": "shopping"
 						}
 					]
 				}
@@ -184,7 +192,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"category\": \"truck\"\n}",
+					"raw": "{\n    \"status\": \"Done\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -192,7 +200,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/task?id=69a269ef-84c2-4381-9d2b-8f89f58534e1",
+					"raw": "http://localhost:4000/api/task?id=8b44f904-ede8-4b75-a85e-8fd67b23852c",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -205,7 +213,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "69a269ef-84c2-4381-9d2b-8f89f58534e1"
+							"value": "8b44f904-ede8-4b75-a85e-8fd67b23852c"
 						}
 					]
 				}
@@ -245,7 +253,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"taskId\": \"5accf6c6-62bb-485f-91ff-a6acfea5fc22\",\r\n    \"title\": \"Byu pads\",\r\n    \"description\": \"Good quality\",\r\n    \"status\": false\r\n}",
+					"raw": "{\r\n    \"taskId\": \"69ffc471-f1f1-4636-8250-5d770f594c49\",\r\n    \"title\": \"Byu filter\",\r\n    \"description\": \"Good quality\",\r\n    \"status\": \"Pending\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "5ff8b6d0-22e7-4761-ae58-0579463cef2e",
+		"name": "todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Andrew\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create simple task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Cucumber\",\n    \"description\": \"Must be green\",\n    \"userId\": \"b6d8a49d-bf61-4eca-9c67-07768b23b6bd\",\n    \"status\": \"Pending\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create task with due and category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Oil change\",\n    \"description\": \"Buy oil and make appointment\",\n    \"userId\": \"a7bd5765-bf4b-4940-b45d-9f50d6821158\",\n    \"due\": \"2022-03-01\",\n    \"category\": \"car\",\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wrong task structure",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Oil change\",\n    \"userId\": \"38c3f326-b2c7-4a4f-97c7-419b7984ab8b\",\n    \"due\": \"2022-03-01\",\n    \"category\": \"car\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/task?id=f6cfdb00-5a87-44e4-91d8-ff694aabdea2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "f6cfdb00-5a87-44e4-91d8-ff694aabdea2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"category\": \"truck\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/task?id=69a269ef-84c2-4381-9d2b-8f89f58534e1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "69a269ef-84c2-4381-9d2b-8f89f58534e1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/task?id=69a269ef-84c2-4381-9d2b-8f89f58534e1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "69a269ef-84c2-4381-9d2b-8f89f58534e1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create simple sub task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskId\": \"5accf6c6-62bb-485f-91ff-a6acfea5fc22\",\r\n    \"title\": \"Byu pads\",\r\n    \"description\": \"Good quality\",\r\n    \"status\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/subtask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"subtask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update subtask",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Done\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/subtask?id=39893ccc-47df-49de-957b-6036e7a02eed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"subtask"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "39893ccc-47df-49de-957b-6036e7a02eed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete subtask",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/subtask?id=39893ccc-47df-49de-957b-6036e7a02eed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"subtask"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "39893ccc-47df-49de-957b-6036e7a02eed"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
